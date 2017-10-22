@@ -1,6 +1,6 @@
 # laravel5.5-demo
 Laravel 5.5 Multiauth Demo
-
+```
 # Configurations:
 
 # /config/auth.php
@@ -199,7 +199,7 @@ CheckUser.php  ->> For check user
 
 2014_10_12_000000_create_users_table.php
 
-2014_10_12_100000_create_password_resets_table.php
+2014_10_12_100000_create_users_password_resets_table.php
 
 2016_10_18_131257_create_admins_table.php
 
@@ -211,3 +211,4 @@ CheckUser.php  ->> For check user
 Excecute
 
 php artisan migrate
+```
