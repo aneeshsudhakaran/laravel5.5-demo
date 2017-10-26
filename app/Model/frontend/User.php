@@ -5,6 +5,9 @@ namespace App\Model\frontend;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use Illuminate\Contracts\Auth\CanResetPassword;
+use App\Notifications\UserResetPasswordNotification;
+
 
 class User extends Authenticatable
 {
@@ -34,6 +37,11 @@ class User extends Authenticatable
                     'email' => $input['email'],
                     'password' => bcrypt($input['password']),
                 ]);
+    }
+    
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new UserResetPasswordNotification($token));
     }
     
 }
